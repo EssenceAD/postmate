@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0047)file:///C:/Users/choly/Downloads/landing_3.html -->
+<!-- saved from url=(0045)file:///C:/Users/choly/Downloads/landing.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -766,10 +766,10 @@ footer {
 <nav>
   <div class="logo">Post<span>Mate</span></div>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#features">기능</a></li>
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#how">사용법</a></li>
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#pricing">요금제</a></li>
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#faq">FAQ</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollTo(&#39;features&#39;)">기능</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollTo(&#39;how&#39;)">사용법</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollTo(&#39;pricing&#39;)">요금제</a></li>
+    <li><a href="javascript:void(0)" onclick="scrollTo(&#39;faq&#39;)">FAQ</a></li>
     <li><a href="https://essencead.github.io/blog-writer" target="_blank" class="nav-cta">무료로 시작하기</a></li>
   </ul>
 </nav>
@@ -784,7 +784,7 @@ footer {
     <a href="https://essencead.github.io/blog-writer" target="_blank" class="btn-primary">
       ✦ 무료로 3건 체험하기
     </a>
-    <a href="file:///C:/Users/choly/Downloads/landing_3.html#how" class="btn-secondary">작동 방식 보기</a>
+    <a href="javascript:void(0)" onclick="scrollTo(&#39;how&#39;)" class="btn-secondary">작동 방식 보기</a>
   </div>
   <div class="hero-stats">
     <div class="stat-item">
@@ -950,7 +950,7 @@ footer {
           <li>TXT 다운로드</li>
           <li class="dim">팀 계정</li>
         </ul>
-        <a href="file:///C:/Users/choly/Downloads/landing_3.html#" class="plan-btn featured-btn">시작하기 →</a>
+        <a href="file:///C:/Users/choly/Downloads/landing.html#" class="plan-btn featured-btn">시작하기 →</a>
       </div>
 
       <!-- 프로 -->
@@ -965,7 +965,7 @@ footer {
           <li>TXT 다운로드</li>
           <li class="dim">팀 계정</li>
         </ul>
-        <a href="file:///C:/Users/choly/Downloads/landing_3.html#" class="plan-btn">시작하기 →</a>
+        <a href="file:///C:/Users/choly/Downloads/landing.html#" class="plan-btn">시작하기 →</a>
       </div>
 
       <!-- 대행사 -->
@@ -980,7 +980,7 @@ footer {
           <li>팀 계정 5개</li>
           <li>우선 고객지원</li>
         </ul>
-        <a href="file:///C:/Users/choly/Downloads/landing_3.html#" class="plan-btn">도입 문의하기 →</a>
+        <a href="file:///C:/Users/choly/Downloads/landing.html#" class="plan-btn">도입 문의하기 →</a>
       </div>
     </div>
   </div>
@@ -1046,9 +1046,9 @@ footer {
 <footer>
   <div class="footer-logo">PostMate</div>
   <ul class="footer-links">
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#">이용약관</a></li>
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#">개인정보처리방침</a></li>
-    <li><a href="file:///C:/Users/choly/Downloads/landing_3.html#">문의하기</a></li>
+    <li><a href="javascript:void(0)" onclick="showModal(&#39;terms&#39;)">이용약관</a></li>
+    <li><a href="javascript:void(0)" onclick="showModal(&#39;privacy&#39;)">개인정보처리방침</a></li>
+    <li><a href="mailto:cholybrown@naver.com">문의하기</a></li>
   </ul>
   <div class="footer-copy">© 2025 에센스애드. All rights reserved.</div>
 </footer>
@@ -1080,6 +1080,44 @@ window.addEventListener('scroll', () => {
     nav.style.borderBottomColor = 'rgba(212,168,67,0.1)';
   }
 });
+
+// 부드러운 스크롤
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+}
+
+// 모달
+function showModal(type) {
+  const contents = {
+    terms: `<h2 style="margin-bottom:16px;font-size:18px;">이용약관</h2>
+<p style="color:#7a7060;font-size:13px;line-height:1.8;">
+PostMate 서비스 이용약관은 현재 작성 중입니다.<br><br>
+서비스 이용 관련 문의는 아래 이메일로 연락해주세요.<br>
+<strong style="color:#d4a843;">cholybrown@naver.com</strong>
+</p>`,
+    privacy: `<h2 style="margin-bottom:16px;font-size:18px;">개인정보처리방침</h2>
+<p style="color:#7a7060;font-size:13px;line-height:1.8;">
+개인정보처리방침은 현재 작성 중입니다.<br><br>
+PostMate는 서비스 제공을 위해 이메일 주소를 수집하며,<br>
+제3자에게 제공하지 않습니다.<br><br>
+문의: <strong style="color:#d4a843;">cholybrown@naver.com</strong>
+</p>`
+  };
+
+  const modal = document.createElement('div');
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;';
+  modal.innerHTML = `
+    <div style="background:#131110;border:1px solid #2a2620;border-radius:16px;padding:32px;max-width:480px;width:100%;position:relative;">
+      ${contents[type]}
+      <button onclick="this.closest('[style]').remove()" style="margin-top:24px;width:100%;padding:12px;background:#d4a843;border:none;border-radius:8px;color:#0a0908;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;">닫기</button>
+    </div>`;
+  modal.addEventListener('click', e => { if(e.target === modal) modal.remove(); });
+  document.body.appendChild(modal);
+}
 </script>
 
 
